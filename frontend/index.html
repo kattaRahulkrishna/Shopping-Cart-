@@ -1,15 +1,28 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>frontend</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <!-- Cache Buster 2026 -->
 
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>frontend</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script>
+    window.onerror = function (msg, url, line, col, error) {
+      document.body.innerHTML += '<div style="color:red; background:white; padding:20px; border:2px solid red; margin:20px; z-index:9999; position:relative;">' +
+        '<h3>Critical Error</h3>' +
+        '<p>' + msg + '</p>' +
+        '<p>' + url + ':' + line + ':' + col + '</p>' +
+        '<pre>' + (error ? error.stack : 'No stack') + '</pre>' +
+        '</div>';
+    };
+  </script>
+
+
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
 </html>
